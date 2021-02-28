@@ -1,0 +1,12 @@
+{
+    "ranks": {
+        "0": "Cadet | 0-15 Hours",
+        "15": "Jr. First Officer | 15-30 Hours",
+        "30": "First Officer | 30-100 Hours",
+        "100": "Captain | 100-250 Hours",
+        "250": "Senior Captain | 250-500 Hours",
+        "500": "Commander | 500-750 Hours",
+        "750": "Elite Commander | 750-1200 Hours",
+        "1200": "Intermiles Privilege | 1200+ Hours"
+    }
+}
