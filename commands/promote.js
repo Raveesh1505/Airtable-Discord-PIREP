@@ -47,9 +47,10 @@ module.exports = {
             }
         }
         try {
-            await airtable.updateRank(config, updatedPilots);
             if(updatedCallsigns.length > 1) message.channel.send(`Congratulations to ${updatedCallsigns.join(', ')}! They have been promoted.`);
-            else message.channel.send("Why don't you do one more flight and try again.. :troll:")
+            else message.channel.send("Why don't you do one more flight and try again.. :troll:");
+            await airtable.updateRank(config, updatedPilots);
+
         }catch(e){
             message.channel.send(`Failed to update airtable. Pilots to be promoted are: ${updatedCallsigns.join(', ')}`)
         }
