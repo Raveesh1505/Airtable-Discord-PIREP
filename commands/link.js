@@ -7,7 +7,7 @@ module.exports = {
     description: "Link VA URLs for user",
     async execute(message) {
         let guildId = message.guild.id;
-        let guildData = await configUtils.loadGuildConfigs(guildId)
+        let guildData = await configUtils.loadGuildConfigs(guildId);
         let splitMessage = message.content.split(' ');
         let queryLink = '';
         if (splitMessage.length < 2) queryLink = ' ';

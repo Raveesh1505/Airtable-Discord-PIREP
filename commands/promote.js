@@ -6,6 +6,10 @@ module.exports = {
     name: "promote",
     description: "Promote pilots who passed their rank. Specific to Jet Airways",
     async execute(message) {
+
+        let guildId = message.guild.id;
+        let guildData = await configUtils.loadGuildConfigs(guildId);
+        let config = guildData['promotion_config']
         //Fetch all pilots records
         //Promote the deserving ones.
         //Push to airtable
@@ -48,7 +52,8 @@ module.exports = {
         }
         try {
             await airtable.updateRank(config, updatedPilots);
-            message.channel.send(`Congratulations to ${updatedCallsigns.join(', ')}! They have been promoted.`);
+            if(updatedCallsigns.length > 1) message.channel.send(`Congratulations to ${updatedCallsigns.join(', ')}! They have been promoted.`);
+            else message.channel.send("Why don't you do one more flight and try again.. :troll:")
         }catch(e){
             message.channel.send(`Failed to update airtable. Pilots to be promoted are: ${updatedCallsigns.join(', ')}`)
         }
