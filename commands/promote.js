@@ -14,11 +14,7 @@ module.exports = {
         //Promote the deserving ones.
         //Push to airtable
         //Send a message to all those who were promoted
-        let config = {
-            api_key: "keyqib72M5UjMYPTj",
-            base_id: "appsFcqOgZ3I3RahY",
-            table_name: "Pilot Stats"
-        }
+        
         /* 
         Data required: Hours Flown, Rank, record_id
         Get list of ranks
